@@ -1,0 +1,76 @@
+// lab03.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+using namespace std;
+float add(float, float);
+float sub(float, float);
+float mul(float, float);
+float div(float, float);
+
+
+int main()
+{
+    float num1, num2;
+    char operation;
+    bool calculator = 1;
+    
+
+    while (calculator) {
+        cout << "enter 1st number: \n";
+        cin >> num1;
+        cout << "enter 2st number: \n";
+        cin >> num2;
+        cout << "enter operation (+, -, *, /): \n";
+        cin >> operation;
+
+        if (operation == '+') {
+            cout << add(num1, num2) << endl;
+        }
+        else
+            if (operation == '-') {
+                cout << sub(num1, num2) << endl;
+            }
+            else
+                if (operation == '*') {
+                    cout << mul(num1, num2) << endl;
+                }
+                else
+                    if (operation == '/') {
+                        cout << div(num1, num2) << endl;
+                    }
+                    else {
+                        cout << "invalid operation\n";
+                        return 0;
+                    }
+        cout << "continue?(Y/n): \n";
+        cin >> operation;
+        if (operation == 'n') {
+            return 0;
+        }
+    }
+    
+}
+
+float add(float a, float b)
+{
+    return a + b;
+}
+float sub(float a, float b)
+{
+    return a - b;
+}
+float mul(float a, float b)
+{
+    return a * b;
+}
+float div(float a, float b)
+{
+    if (b == 0)
+    {
+        cout << "division by 0";
+        return 0;
+    } else {
+        return a / b;
+    }
+}
